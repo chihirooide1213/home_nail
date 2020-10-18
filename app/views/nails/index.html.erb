@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Nails</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Relationship</th>
+      <th>User</th>
+      <th>Name</th>
+      <th>Image</th>
+      <th>Brand</th>
+      <th>Introduction</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @nails.each do |nail| %>
+      <tr>
+        <td><%= nail.relationship_id %></td>
+        <td><%= nail.user_id %></td>
+        <td><%= nail.name %></td>
+        <td><%= nail.image_id %></td>
+        <td><%= nail.brand %></td>
+        <td><%= nail.introduction %></td>
+        <td><%= nail.price %></td>
+        <td><%= link_to 'Show', nail %></td>
+        <td><%= link_to 'Edit', edit_nail_path(nail) %></td>
+        <td><%= link_to 'Destroy', nail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Nail', new_nail_path %>

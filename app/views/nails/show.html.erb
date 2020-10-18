@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Relationship:</strong>
+  <%= @nail.relationship_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @nail.user_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @nail.name %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @nail.image_id %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @nail.brand %>
+</p>
+
+<p>
+  <strong>Introduction:</strong>
+  <%= @nail.introduction %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @nail.price %>
+</p>
+
+<%= link_to 'Edit', edit_nail_path(@nail) %> |
+<%= link_to 'Back', nails_path %>
