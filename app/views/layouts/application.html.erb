@@ -10,6 +10,17 @@
   </head>
 
   <body>
+    <header>
+      <div class="container">
+      <% if user_signed_in? %>
+      <p>ようこそ　<%= current_user.last_name + current_user.first_name %>　さん！</p>
+        <%= link_to "マイページ", users_path %>
+        <%= link_to "ログアウト",destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "登録はこちらから", new_user_registration_path %>
+      <% end %>
+    </div>
+    </header>
     <%= yield %>
   </body>
 </html>

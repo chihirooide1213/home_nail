@@ -10,13 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_06_054520) do
+ActiveRecord::Schema.define(version: 2020_10_19_044124) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
     t.integer "nail_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "rate"
+    t.text "content"
+    t.string "title"
   end
 
   create_table "favorites", force: :cascade do |t|
