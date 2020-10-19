@@ -10,6 +10,7 @@ class NailsController < ApplicationController
   # GET /nails/1
   # GET /nails/1.json
   def show
+    @nail = Nail.find(params[:id])
   end
 
   # GET /nails/new
