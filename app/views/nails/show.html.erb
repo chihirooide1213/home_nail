@@ -1,39 +1,42 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
 
-<p>
-  <strong>Relationship:</strong>
-  <%= @nail.relationship_id %>
-</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @nail.user_id %>
-</p>
+  <p>
+    <strong>Relationship:</strong>
+    <%= @nail.relationship_id %>
+  </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @nail.name %>
-</p>
+  <p>
+    <strong>User:</strong>
+    <%= @nail.user_id %>
+  </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @nail.image_id %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @nail.name %>
+  </p>
 
-<p>
-  <strong>Brand:</strong>
-  <%= @nail.brand %>
-</p>
+  <p>
+    <strong>Image:</strong>
+    <%= attachment_image_tag @nail,:image, :fill, 200, 200 ,format: "jpeg" %>
+  </p>
 
-<p>
-  <strong>Introduction:</strong>
-  <%= @nail.introduction %>
-</p>
+  <p>
+    <strong>Brand:</strong>
+    <%= @nail.brand %>
+  </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @nail.price %>
-</p>
+  <p>
+    <strong>Introduction:</strong>
+    <%= @nail.introduction %>
+  </p>
 
-<%= link_to 'Edit', edit_nail_path(@nail) %> |
-<%= link_to 'Back', nails_path %>
+  <p>
+    <strong>Price:</strong>
+    <%= @nail.price %>
+  </p>
+
+  <%= link_to 'Edit', edit_nail_path(@nail) %> |
+  <%= link_to 'Back', nails_path %>
+</div>
