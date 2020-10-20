@@ -21,7 +21,7 @@
         <tr>
           <td><%= nail.user_id %></td>
           <td><%= nail.name %></td>
-          <td><%= nail.image_id %></td>
+          <td><%= attachment_image_tag nail,:image, :fill, 50, 50 ,format: "jpeg" %></td>
           <td><%= nail.brand %></td>
           <td><%= nail.introduction %></td>
           <td><%= nail.price %></td>

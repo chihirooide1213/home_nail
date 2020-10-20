@@ -70,6 +70,6 @@ class NailsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def nail_params
-      params.require(:nail).permit(:relationship_id, :user_id, :name, :image_id, :brand, :introduction, :price)
+      params.require(:nail).permit(:relationship_id, :user_id, :name, :image, :brand, :introduction, :price)
     end
 end
