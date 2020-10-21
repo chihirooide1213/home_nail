@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
   # GET /comments.json
   def index
     @comments = Comment.all
+    @nail = Nail.find(params[:nail_id])
   end
 
   # GET /comments/1
@@ -14,7 +15,11 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
+    @nail = Nail.find(params[:nail_id])
     @comment = Comment.new
+    @comment.user_id = current_user.id
+    @comment.nail_id = @nail.id
+
   end
 
   # GET /comments/1/edit
@@ -24,11 +29,14 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
+    @nail = Nail.find(params[:nail_id])
     @comment = Comment.new(comment_params)
+    @comment.user_id = current_user.id
+    @comment.nail_id = @nail.id
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+        format.html { redirect_to nail_comments_path, notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new }
@@ -69,6 +77,6 @@ class CommentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def comment_params
-      params.require(:comment).permit(:user_id, :nail_id)
+      params.permit(:user_id, :nail_id, :rate, :title, :content)
     end
 end

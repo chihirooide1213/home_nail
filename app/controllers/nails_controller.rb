@@ -5,6 +5,8 @@ class NailsController < ApplicationController
   # GET /nails.json
   def index
     @nails = Nail.all
+    @comments = Comment.all
+    @nail = Nail.find(params[:nail_id])
   end
 
   # GET /nails/1
@@ -20,6 +22,10 @@ class NailsController < ApplicationController
 
   # GET /nails/1/edit
   def edit
+    @nail = Nail.find(params[:id])
+    if @nail.user != current_user
+      redirect_to nails_path
+    end
   end
 
   # POST /nails

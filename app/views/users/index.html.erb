@@ -36,18 +36,20 @@
     </table>
   </div>
   <h4>投稿した商品</h4>
-  <div class="post row">
+  <div class="row">
     <% @nails.each do |nail| %>
-      <%= attachment_image_tag nail, :item_image,:fill, 200, 200, format: "jpeg" %>
-      <div><%= link_to nail.name, users_nail_path(nail) %></div>
+    <div class="post">
+      <div><%= attachment_image_tag nail, :image,:fill, 100, 100, format: "jpeg" %></div>
+      <div><%= link_to nail.name, nail_path(nail) %></div>
       <div><%= nail.price %>円</div>
+    </div>
     <% end %>
   </div>
   <h4>お気に入り商品</h4>
     <div id="favorite-box" class="row">
       <% @favorites.each do |favorite| %>
         <div id="favorite">
-          <%= attachment_image_tag favorite.nail, :item_image,:fill, 200, 200, format: "jpeg" %>
+          <%= attachment_image_tag favorite.nail, :image,:fill, 100, 100, format: "jpeg" %>
           <div><%= link_to favorite.nail.name, users_nail_path(favorite.nail) %></div>
           <div><%= favorite.item.price %>円</div>
         </div>

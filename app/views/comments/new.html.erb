@@ -1,5 +1,7 @@
+<div class="container">
 <h1>New Comment</h1>
 
-<%= render 'form', comment: @comment %>
+<%= render 'form', comment: @comment, nail: @nail %>
 
-<%= link_to 'Back', comments_path %>
+<%= link_to 'Back', nail_comments_path,class:"btn btn-success" %>
+</div>
