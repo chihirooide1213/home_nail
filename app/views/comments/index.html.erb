@@ -6,10 +6,13 @@
   <table>
     <thead>
       <tr>
-        <th>User</th>
-        <th>Nail</th>
-        <th>Nail</th>
-        <th>Nail</th>
+        <th>User ID</th>
+        <td></td>
+        <th>Nail ID</th>
+        <td></td>
+        <th>評価</th>
+        <td></td>
+        <th>コメント</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -18,9 +21,13 @@
       <% @comments.each do |comment| %>
         <tr>
           <td><%= comment.user_id %></td>
+          <td></td>
           <td><%= comment.nail_id %></td>
+          <td></td>
           <td><%= comment.rate %></td>
+          <td></td>
           <td><%= comment.content %></td>
+          <td></td>
           <td><%= link_to 'Show', nail_comment_path(comment.id,comment.nail.id) %></td>
           <td><%= link_to 'Edit', edit_nail_comment_path(comment.id,comment.nail.id) %></td>
           <td><%= link_to 'Destroy', nail_comment_path(comment.id, comment.nail.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -31,5 +38,5 @@
 
   <br>
 
-<%= link_to 'New Comment', new_nail_comment_path(@nail) %>
+<%= link_to 'New Comment', new_nail_comment_path %>
 </div>

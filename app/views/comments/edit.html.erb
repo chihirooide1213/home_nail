@@ -1,6 +1,8 @@
-<h1>Editing Comment</h1>
+<div class="container">
+	<h1>Editing Comment</h1>
 
-<%= render 'edit.form', comment: @comment %>
+	<%= render 'edit.form', comment: @comment %>
 
-<%= link_to 'Show', @comment %> |
-<%= link_to 'Back', comments_path %>
+	<%= link_to 'Show', nail_comment_path(@comment) %> |
+	<%= link_to 'Back', nail_comments_path %>
+</div>

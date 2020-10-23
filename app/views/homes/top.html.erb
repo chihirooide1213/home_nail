@@ -2,4 +2,32 @@
 <h1>Home nail</h1>
 
 <div>ランキング</div>
+
+<div class="ranking">
+  <table class="table">
+    <% @nail_ranking.each_with_index do |nail_average, index| %>
+    <% nail = nail_average[:nail] %>
+       <% average = nail_average[:average]%>
+      <tr>
+        <th><%= link_to nail.name, nail_path(nail) %></th>
+        <th>
+          <div id="star-rate-<%= index %>"></div>
+                  <script>
+                  $('#star-rate-<%= index %>').raty({
+                    size: 36,
+                    starOff:  '<%= asset_path('star-off.png') %>',
+                    starOn : '<%= asset_path('star-on.png') %>',
+                    starHalf: '<%= asset_path('star-half.png') %>',
+                    half: true,
+                    readOnly: true,
+                    score: <%= average %>,
+                  });
+                  </script>
+        </th>
+        <th><%= attachment_image_tag nail,:image,:fill, 100, 100, format: "jpeg" %></th>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
 </div>

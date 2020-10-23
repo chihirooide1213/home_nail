@@ -6,7 +6,6 @@ class NailsController < ApplicationController
   def index
     @nails = Nail.all
     @comments = Comment.all
-    @nail = Nail.find(params[:nail_id])
   end
 
   # GET /nails/1
